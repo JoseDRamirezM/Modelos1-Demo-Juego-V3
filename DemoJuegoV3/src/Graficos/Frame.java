@@ -54,21 +54,24 @@ public class Frame extends JFrame implements ActionListener {
         this.setSize(500,300);
         this.setVisible(true);
         this.s = s;
-        manejadores = new Handler[2];
-        manejadores[0] = new HandlerElfo();
-        manejadores[1] = new HandlerHumano();
         
-        for(int i=0; i<manejadores.length -1; i++){
-            manejadores[i].setSucesor(manejadores[i+1]);
-        }
+        //Crear la lista de manejadores
+        manejadores = new Handler[2];
+        manejadores[0] = new HandlerHumano();
+        manejadores[1] = new HandlerElfo();
+        
+        //Setear los sucesores correspondientes
+        manejadores[0].setSucesor(manejadores[1]);
+        manejadores[1].setSucesor(manejadores[0]);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        //La accion de cada personaje esta enviada al manejador contrario
         if(e.getSource() == boton1){
-            manejadores[0].moverAdelante(1, s);                        
+            manejadores[1].moverAdelante(0, s);                        
         }else {
-            manejadores[1].moverAdelante(0, s);
+            manejadores[0].moverAdelante(1, s);
         }
     }
                     

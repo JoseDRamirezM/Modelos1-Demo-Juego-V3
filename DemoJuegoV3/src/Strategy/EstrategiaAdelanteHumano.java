@@ -24,7 +24,9 @@ public class EstrategiaAdelanteHumano extends Strategy {
 
             // Simulate a key press 
             robot.keyRelease(KeyEvent.VK_W);
-            robot.keyPress(KeyEvent.VK_UP);                   
+            robot.keyPress(KeyEvent.VK_S);
+            robot.keyRelease(KeyEvent.VK_S);
+            robot.keyPress(KeyEvent.VK_DOWN);                   
 
             } catch (AWTException e) {
                 e.printStackTrace();

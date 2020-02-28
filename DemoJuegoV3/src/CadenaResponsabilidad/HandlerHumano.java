@@ -21,7 +21,8 @@ public class HandlerHumano extends Handler {
             super.e = new EstrategiaAdelanteHumano();
             e.teclaPresionada(s);
         }else {
-            moverAdelante(opt, s);
+            System.out.println("Operacion enviada al sucesor");
+            sucesor.moverAdelante(opt, s);
         }
     }
     
